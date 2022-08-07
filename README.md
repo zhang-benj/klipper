@@ -16,3 +16,12 @@ Klipper is Free Software. See the [license](COPYING) or read the
 [documentation](https://www.klipper3d.org/Overview.html). We depend on
 the generous support from our
 [sponsors](https://www.klipper3d.org/Sponsors.html).
+
+Note: for this branch, you must configure scripts/create-pty.sh as root owned, read only otherwise, then
+add the script to /etc/sudoers using vidsudo. Specifically, add:
+
+pi ALL=(ALL) NOPASSWD: /home/pi/klipper/scripts/create-pty.sh
+
+directly under 
+
+%sudo   ALL=(ALL:ALL) ALL
