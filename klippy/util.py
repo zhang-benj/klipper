@@ -39,7 +39,7 @@ def create_pty(ptyname):
         pass
     filename = os.ttyname(sfd)
     os.chmod(filename, 0o660)
-    os.system('sudo /home/pi/create-pty.sh ' + filename + ' ' + ptyname)
+    os.system('sudo /home/pi/klipper/scripts/create-pty.sh ' + filename + ' ' + ptyname)
     set_nonblock(mfd)
     old = termios.tcgetattr(mfd)
     old[3] = old[3] & ~termios.ECHO
